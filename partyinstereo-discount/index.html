@@ -27,22 +27,16 @@
       z-index: 10;
       transition: opacity 0.4s ease;
     }
-    #splash.hidden {
-      opacity: 0;
-      pointer-events: none;
-    }
-    #splash img {
-      width: 55vw;
-      max-width: 240px;
-    }
+    #splash.hidden { opacity: 0; pointer-events: none; }
+    #splash img { width: 55vw; max-width: 240px; }
 
     #page {
       display: flex;
       flex-direction: column;
       align-items: center;
       height: 100dvh;
-      padding: 16px 12px 8px;
-      gap: 12px;
+      padding: 16px 12px 12px;
+      gap: 10px;
     }
 
     #logo {
@@ -67,6 +61,31 @@
       height: auto;
       object-fit: contain;
     }
+
+    #download {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 22px;
+      border: 1.5px solid rgba(255,255,255,0.35);
+      border-radius: 100px;
+      background: transparent;
+      color: #fff;
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+      transition: background 0.15s, border-color 0.15s;
+    }
+    #download:active {
+      background: rgba(255,255,255,0.1);
+      border-color: rgba(255,255,255,0.6);
+    }
+    #download svg { flex-shrink: 0; }
   </style>
 </head>
 <body>
@@ -80,6 +99,12 @@
     <div id="flyer">
       <img src="flyer.webp" alt="Party in Stereo — Discount Flyer" id="flyer-img">
     </div>
+    <a id="download" href="flyer.webp" download="partyinstereo-discount.webp">
+      <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M7.5 1v9m0 0L4 6.5M7.5 10l3.5-3.5M1.5 13h12" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Save image
+    </a>
   </div>
 
   <script>
